@@ -8,14 +8,14 @@ public class lowerbound {
         while (low <= high) {
             int mid = low + (high - low) / 2;
 
-            // Maybe an answer
+
             if (arr[mid] >= x) {
                 ans = mid;
 
-                // Look for a smaller index on the left
+
                 high = mid - 1;
             } else {
-                // Look on the right
+
                 low = mid + 1;
             }
         }
