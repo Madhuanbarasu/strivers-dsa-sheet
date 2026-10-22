@@ -13,8 +13,14 @@ public class searchinrotatedsorted {
         while(low<=high){
             int mid=(low+high)/2;
             if(arr[mid]==k){
-                System.out.println(mid);
+
+                System.out.println(true);
                 return;
+            }
+            if(arr[low]==arr[mid]&&arr[mid]==arr[high]){
+                low++;
+                high--;
+                continue;
             }
             if(arr[low]<=arr[mid]){
                 if(arr[low]<=k&&k<=arr[mid]){
@@ -25,7 +31,7 @@ public class searchinrotatedsorted {
                 }
             }
             else {
-                if(arr[mid]<=k&&k<=arr[high]){
+                if(arr[mid]<k&&k<=arr[high]){
                     low=mid+1;
                 }
                 else{
@@ -33,6 +39,6 @@ public class searchinrotatedsorted {
                 }
             }
         }
-        System.out.println(-1);
+        System.out.println(false);
     }
 }
